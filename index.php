@@ -1,30 +1,17 @@
 <?php
+require 'Employee.php';
 
-$name = "Habib";
-$role = "Team Lead";
-$experience = 5;
-echo "Name: " . $name . "<br>";
-echo "Role: " . $role . "<br>";
-echo "Experience: " . $experience . " years" . "<br>";
+$employee1 = new Employee("Habib", "Team Lead", 160000, 28);
+$employee2 = new Employee("Hassan", "Front End", 18000, 25);
+$employee3 = new Employee("Ali", "Back End", 20000, 30);
+$employee4 = new Employee("Ahmed", "Full Stack", 25000, 32);
+$employee5 = new Employee("Adeel", "DevOps", 30000, 35);
 
-echo "Welcome to Employee Management System";
-echo "<br>";
+$employees = [$employee1, $employee2, $employee3, $employee4, $employee5];
 
-$employees = [
-    ["Name" => "Habib" , "Role" => "Team Lead" , "Salary" => 160000 , "Age" => "28"],
-    ["Name" => "Hassan" , "Role" => "Front End" , "Salary" => 18000 , "Age" => "25"],
-    ["Name"=> "Ali", "Role" => "Back End" , "Salary" => 20000 , "Age" => "30"],
-    ["Name"=> "Ahmed", "Role" => "Full Stack" , "Salary" => 25000 , "Age" => "32"],
-    ["Name"=> "Adeel", "Role" => "DevOps" , "Salary" => 30000 , "Age" => "35"]
-];
-echo "Employe Details: <br>";
-echo "<br>";
-foreach ( $employees as $value) {
-    echo "Name: " . $value["Name"] . "<br>";
-    echo "Role: " . $value["Role"] . "<br>";
-    echo "Salary: " . $value["Salary"] . "<br>";
-    echo "Age: " . $value["Age"] . "<br>";
-    echo "<br>";
+foreach ($employees as $employee) {
+     echo" <br>";
+    echo $employee->getDetails();
+   
+    echo $employee->getAnnualSalary();
 }
-echo "Total Employees: ";
-echo count($employees) . "<br>";
